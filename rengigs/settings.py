@@ -2,6 +2,10 @@
 from pathlib import Path
 import os
 
+
+LOGIN_REDIRECT_URL = '/'  # Redirect to home page after login
+LOGOUT_REDIRECT_URL = '/'  # Redirect to home page after logout
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -35,6 +39,9 @@ INSTALLED_APPS = [
     'apps.sop',
     'apps.warehouse',
     'apps.fleet',
+    
+     # Third-Party Apps-enables API support in Django
+    "rest_framework",  # Django REST Framework
 ]
 
 MIDDLEWARE = [

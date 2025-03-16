@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import sop_dashboard, upload_sop
+from .views import sop_dashboard
 
 urlpatterns = [
     path("", sop_dashboard, name="sop_dashboard"),
-    path("upload/", upload_sop, name="upload_sop"),
+   # path("upload/", upload_sop, name="upload_sop"),
 ]
