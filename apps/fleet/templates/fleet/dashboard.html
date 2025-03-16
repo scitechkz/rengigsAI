@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Fleet Management</h2>
+<ul>
+    {% for driver in drivers %}
+        <li>{{ driver.name }} - Available</li>
+    {% endfor %}
+</ul>
+{% endblock %}

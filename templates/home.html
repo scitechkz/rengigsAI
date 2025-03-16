@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome to Rengigs AI Platform</h1>
+<p>Select a service:</p>
+<ul>
+    <li><a href="{% url 'sop_dashboard' %}">SOP Management</a></li>
+    <li><a href="{% url 'warehouse_dashboard' %}">Warehouse AI</a></li>
+    <li><a href="{% url 'fleet_dashboard' %}">Fleet Management</a></li>
+</ul>
+{% endblock %}

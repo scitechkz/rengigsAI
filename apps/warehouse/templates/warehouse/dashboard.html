@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Warehouse Management</h2>
+<ul>
+    {% for rack in racks %}
+        <li>Rack {{ rack.location }} - {% if rack.occupied %}Occupied{% else %}Available{% endif %}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

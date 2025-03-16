@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>SOP Dashboard</h2>
+<ul>
+    {% for sop in sop_documents %}
+        <li>{{ sop.title }} - <a href="{{ sop.document.url }}" download>Download</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
