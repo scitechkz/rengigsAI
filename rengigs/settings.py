@@ -1,5 +1,6 @@
 
 from pathlib import Path
+from datetime import timedelta
 import os
 
 
@@ -36,13 +37,32 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
         # Custom Apps
+    "apps.users",   
     'apps.sop',
     'apps.warehouse',
     'apps.fleet',
     
      # Third-Party Apps-enables API support in Django
     "rest_framework",  # Django REST Framework
+     "rest_framework_simplejwt",
 ]
+
+# Set up REST Framework to use JWT authentication
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+    "DEFAULT_PERMISSION_CLASSES": (
+        "rest_framework.permissions.IsAuthenticated",  # Restrict access to authenticated users
+    ),
+}
+
+# JWT Settings (Token Expiry & Refresh)
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "AUTH_HEADER_TYPES": ("Bearer",),  # Use "Bearer <token>" for authentication
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

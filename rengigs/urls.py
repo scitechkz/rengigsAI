@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import home  # Import home view
 from django.contrib.auth import views as auth_views
+from django.contrib import admin
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
     path("", home, name="home"),
@@ -14,4 +16,8 @@ urlpatterns = [
     path("accounts/logout/", auth_views.LogoutView.as_view(next_page="home"), name="logout"),  # Explicit redirect
     path("users/", include("apps.users.urls")),  # Add this line
     
+    
+      # JWT Authentication Endpoints
+    path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]
