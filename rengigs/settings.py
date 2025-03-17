@@ -3,7 +3,18 @@ from pathlib import Path
 from datetime import timedelta
 import os
 import dj_database_url
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
+SECRET_KEY = os.getenv("SECRET_KEY", "your-default-secret-key")
+DEBUG = os.getenv("DEBUG", "False") == "True"
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+# Database Setup
+import dj_database_url
+DATABASES = {
+    "default": dj_database_url.config(default=os.getenv("DATABASE_URL"))
+}
 
 LOGIN_REDIRECT_URL = '/'  # Redirect to home page after login
 LOGOUT_REDIRECT_URL = '/'  # Redirect to home page after logout
@@ -22,13 +33,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(uuuitx_99$pblw0h)58we!gqj%i_8h6$#hdf!sqziqxklk+p2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  # Disable debug mode in production
+#DEBUG = False  # Disable debug mode in production
 
-ALLOWED_HOSTS = [
-    "127.0.0.1",  # Local development
-    "localhost",  # Local development
-    "rengigs.onrender.com",  # Production
-]
 
 DATABASES = {
     "default": dj_database_url.config(default=os.getenv("DATABASE_URL"))

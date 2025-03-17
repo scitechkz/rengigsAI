@@ -28,3 +28,5 @@ whitenoise  # Serves static files in production
 
 # Other Utilities
 django-cors-headers  # Handles CORS for APIs
+# to manage enviroment variables
+python-dotenv
