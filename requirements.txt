@@ -30,4 +30,4 @@ whitenoise  # Serves static files in production
 django-cors-headers  # Handles CORS for APIs
 # to manage enviroment variables
 python-dotenv
-sqlite3 
+#sqlite3 
