@@ -1,1 +1,30 @@
+# 🚀 Ignore Environment Variables
 .env
+
+# 🗂 Ignore Bytecode Files
+__pycache__/
+*.pyc
+*.pyo
+
+# 🚀 Ignore Virtual Environment
+venv/
+env/
+*.egg-info/
+
+# 🗂 Ignore Django & Debug Files
+db.sqlite3  # Ignore SQLite database (Use PostgreSQL for production)
+media/  # Ignore user-uploaded media files
+
+# 🚀 Ignore Static Files (Regenerated Automatically)
+staticfiles/
+static/
+
+# 📂 Ignore IDE/Editor Files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# 🚀 Ignore Docker & Deployment Files (If Needed)
+*.log

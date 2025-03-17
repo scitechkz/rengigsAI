@@ -10,6 +10,7 @@ load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY", "your-default-secret-key")
 DEBUG = os.getenv("DEBUG", "False") == "True"
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+ALLOWED_HOSTS.append("rengigs.onrender.com")
 # Database Setup
 import dj_database_url
 DATABASES = {
