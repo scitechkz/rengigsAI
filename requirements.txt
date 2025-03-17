@@ -1,3 +1,30 @@
-Django>=4.0
-psycopg2-binary>=2.9
-gunicorn
+#Django>=4.0
+#psycopg2-binary>=2.9
+#gunicorn
+# Django & Database
+Django>=5.1.6
+psycopg2-binary  # PostgreSQL adapter
+
+# Django REST Framework
+djangorestframework
+djangorestframework-simplejwt  # JWT Authentication
+
+# Database Configuration
+dj-database-url  # Allows using DATABASE_URL
+
+# Environment Variables Management
+python-dotenv  # Manages environment variables
+
+# File & Image Handling
+Pillow  # Handles image uploads
+
+# Web Scraping & Parsing (If Needed)
+beautifulsoup4  # Web scraping support (if applicable)
+lxml  # HTML parsing support (if applicable)
+
+# Containerization & Deployment
+gunicorn  # WSGI server for production
+whitenoise  # Serves static files in production
+
+# Other Utilities
+django-cors-headers  # Handles CORS for APIs

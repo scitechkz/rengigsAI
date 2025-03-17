@@ -2,6 +2,7 @@
 from pathlib import Path
 from datetime import timedelta
 import os
+import dj_database_url
 
 
 LOGIN_REDIRECT_URL = '/'  # Redirect to home page after login
@@ -21,10 +22,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(uuuitx_99$pblw0h)58we!gqj%i_8h6$#hdf!sqziqxklk+p2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False  # Disable debug mode in production
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "127.0.0.1",  # Local development
+    "localhost",  # Local development
+    "rengigs.onrender.com",  # Production
+]
 
+DATABASES = {
+    "default": dj_database_url.config(default=os.getenv("DATABASE_URL"))
+}
+# Static & Media Files (For Production)
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_URL = "/static/"
 
 # Application definition
 
