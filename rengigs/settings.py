@@ -12,7 +12,7 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 ALLOWED_HOSTS.append("rengigs.onrender.com")
 # Database Setup
-import dj_database_url
+
 DATABASES = {
     "default": dj_database_url.config(default=os.getenv("DATABASE_URL"))
 }
@@ -31,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(uuuitx_99$pblw0h)58we!gqj%i_8h6$#hdf!sqziqxklk+p2'
+#SECRET_KEY = 'django-insecure-(uuuitx_99$pblw0h)58we!gqj%i_8h6$#hdf!sqziqxklk+p2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = False  # Disable debug mode in production
@@ -172,3 +172,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CSRF_COOKIE_SECURE = True
